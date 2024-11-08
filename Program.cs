@@ -6,6 +6,7 @@
         {
 
             Repository<Produkt> produktRepository = new Repository<Produkt>();
+            Repository<Kategori>kategoriRepository = new Repository<Kategori>();
 
 
             var produktRepo = new Repository<Produkt>();
@@ -43,8 +44,17 @@
             {
                 Console.WriteLine($"Id: {produkt.Id} product: {produkt.Namn}, pris: {produkt.Pris}");
             }
+            
 
-            var updatedProdukt = new Produkt { Id = 1, Namn = "Mobile ", Pris = 13000 };
+            //Hämta med ID
+            var updatedProdukt = produktRepo.GetById(3);
+
+            //properties
+            updatedProdukt.Namn = "Telephon"; 
+            updatedProdukt.Pris = 90;
+
+
+            //updatera
             produktRepo.Updater(updatedProdukt);
 
             Console.WriteLine("\nThe Produkt after updating");

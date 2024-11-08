@@ -18,7 +18,6 @@ namespace ovning02ProdukterOchKategorier
             return _items;
         }
 
-
         public T GetById(int id)
         {
             return _items.FirstOrDefault(x => x.Id == id)!;
@@ -35,9 +34,7 @@ namespace ovning02ProdukterOchKategorier
                 Console.WriteLine("the product has been updated");
             }
 
-
         }
-
         public void Remove(int id)
         {
             var item = GetById(id);
